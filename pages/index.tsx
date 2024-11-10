@@ -92,7 +92,7 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_IN" />
-        <meta property="og:site_name" content="ShufflePay" />
+        <meta property="og:site_name" content="XNSMM" />
         <link rel="apple-touch-icon" sizes="120x120" href="/brandhive.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/brandhive.svg" />
         <link rel="icon" type="image/png" sizes="16x16" href="/brandhive.svg" />
@@ -107,7 +107,7 @@ export default function Home() {
                 Generate UPI QR code{" "}
               </h1>
               <h2 className=" text-xl font-inter text-slate-500 text-center">
-                Simplify your payment process with
+                Payment Website For XNSMM 
               </h2>
              
             </div>
@@ -143,7 +143,7 @@ export default function Home() {
                 <div className="space-y-2">
                   {" "}
                   <label htmlFor="description" className="text-slate-500">
-                    Description (Notes)
+                    Username
                   </label>
                   <input
                     id="description"
@@ -244,21 +244,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              {/* div for Copyright and Tag */}
             </div>
-            <div className="flex  col-span-2 m-4 self-center w-full items-center">
-              <h6 className=" m-auto text-slate-400 text-center text-align-center font-urbanist">
-                Copyright © 2023 | developed by
-                <span className="text-blue-600 font-inter font-medium">
-                  <a href="https://www.linkedin.com/in/piyush-kalyan/">
-                    {" "}
-                    Piyush Kalyan{" "}
-                  </a>
-                </span>
-              </h6>
-            </div>
-          </div>
-        </div>
       </main>
     </>
   );
