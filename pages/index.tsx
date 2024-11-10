@@ -41,7 +41,7 @@ export default function Home() {
       let count = localStorage.getItem("count");
       localStorage.setItem("count", String(Number(count) + 1));
     }
-    const qrValue = `upi://pay?pa=${formData.upiId}&pn=${formData.payeeName}&am=${formData.transactionAmount}&tn=${formData.description}&cu=INR`;
+    const qrValue = `upi://pay?pa=9633605648@fam&pn=Sabarinath&am=${formData.transactionAmount}&tn=${formData.description}&cu=INR`;
     setQrCodeValue(qrValue);
   };
   const handleCaptureClick = async () => {
@@ -81,7 +81,7 @@ export default function Home() {
         <link rel="icon" href="/brandhive.svg" />
         <meta name="theme-color" content="#2D3748" />
         <meta property="og:url" content="https://shufflepay.vercel.app/" />
-        <meta property="og:title" content="ShufflePay" />
+        <meta property="og:title" content="xnsmm" />
         <meta
           property="og:description"
           content="This is a web application that allows users to generate UPI QR codes easily. . Users can enter their UPI ID, amount, and description, and the app will generate a QR code that can be scanned by any UPI-compliant mobile app to make a payment."
@@ -118,38 +118,6 @@ export default function Home() {
                 action=""
                 className="m-auto  md:w-10/12 space-y-4 autofill:bg-white "
               >
-                <div className="space-y-2">
-                  <label htmlFor="payeeName" className="text-slate-500">
-                    Payee/Merchant Name
-                  </label>
-                  <input
-                    id="payeeName"
-                    name="payeeName"
-                    value={formData.payeeName}
-                    onChange={(e) =>
-                      setFormData({ ...formData, payeeName: e.target.value })
-                    }
-                    type="text"
-                    className="w-full p-2 border border-slate-300 rounded-lg focus:outline-none focus:ring focus:border-slate-400"
-                    placeholder="Payee Name"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="upiId" className="text-slate-500">
-                    UPI ID
-                  </label>
-                  <input
-                    autoComplete="on"
-                    id="upiId"
-                    name="upiId"
-                    value={formData.upiId}
-                    onChange={(e) =>
-                      setFormData({ ...formData, upiId: e.target.value })
-                    }
-                    type="text"
-                    className="w-full p-2 border border-slate-300 rounded-lg focus:outline-none focus:ring focus:border-slate-400"
-                    placeholder="UPI ID"
-                  />
                 </div>
                 <div className="space-y-2">
                   {" "}
