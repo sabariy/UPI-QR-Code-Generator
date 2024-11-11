@@ -41,7 +41,7 @@ export default function Home() {
       let count = localStorage.getItem("count");
       localStorage.setItem("count", String(Number(count) + 1));
     }
-    const qrValue = `upi://pay?pa=9633605648@fam&pn=Sabarinath&am=${formData.transactionAmount}&tn=${formData.description}&cu=INR`;
+    const qrValue = `upi://pay?pa=${formData.upiId}&pn=${formData.payeeName}&am=${formData.transactionAmount}&tn=${formData.description}&cu=INR`;
     setQrCodeValue(qrValue);
   };
   const handleCaptureClick = async () => {
@@ -81,7 +81,7 @@ export default function Home() {
         <link rel="icon" href="/brandhive.svg" />
         <meta name="theme-color" content="#2D3748" />
         <meta property="og:url" content="https://shufflepay.vercel.app/" />
-        <meta property="og:title" content="xnsmm" />
+        <meta property="og:title" content="ShufflePay" />
         <meta
           property="og:description"
           content="This is a web application that allows users to generate UPI QR codes easily. . Users can enter their UPI ID, amount, and description, and the app will generate a QR code that can be scanned by any UPI-compliant mobile app to make a payment."
@@ -92,7 +92,7 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_IN" />
-        <meta property="og:site_name" content="XNSMM" />
+        <meta property="og:site_name" content="ShufflePay" />
         <link rel="apple-touch-icon" sizes="120x120" href="/brandhive.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/brandhive.svg" />
         <link rel="icon" type="image/png" sizes="16x16" href="/brandhive.svg" />
@@ -107,7 +107,7 @@ export default function Home() {
                 Generate UPI QR code{" "}
               </h1>
               <h2 className=" text-xl font-inter text-slate-500 text-center">
-                Payment Website For XNSMM 
+                Simplify your payment process with
               </h2>
              
             </div>
@@ -118,6 +118,38 @@ export default function Home() {
                 action=""
                 className="m-auto  md:w-10/12 space-y-4 autofill:bg-white "
               >
+                <div className="space-y-2">
+                  <label htmlFor="payeeName" className="text-slate-500">
+                    Payee/Merchant Name
+                  </label>
+                  <input
+                    id="payeeName"
+                    name="payeeName"
+                    value={formData.payeeName}
+                    onChange={(e) =>
+                      setFormData({ ...formData, payeeName: e.target.value })
+                    }
+                    type="text"
+                    className="w-full p-2 border border-slate-300 rounded-lg focus:outline-none focus:ring focus:border-slate-400"
+                    placeholder="Payee Name"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="upiId" className="text-slate-500">
+                    UPI ID
+                  </label>
+                  <input
+                    autoComplete="on"
+                    id="upiId"
+                    name="upiId"
+                    value={formData.upiId}
+                    onChange={(e) =>
+                      setFormData({ ...formData, upiId: e.target.value })
+                    }
+                    type="text"
+                    className="w-full p-2 border border-slate-300 rounded-lg focus:outline-none focus:ring focus:border-slate-400"
+                    placeholder="UPI ID"
+                  />
                 </div>
                 <div className="space-y-2">
                   {" "}
@@ -143,7 +175,7 @@ export default function Home() {
                 <div className="space-y-2">
                   {" "}
                   <label htmlFor="description" className="text-slate-500">
-                    Username
+                    Description (Notes)
                   </label>
                   <input
                     id="description"
@@ -244,7 +276,21 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              {/* div for Copyright and Tag */}
             </div>
+            <div className="flex  col-span-2 m-4 self-center w-full items-center">
+              <h6 className=" m-auto text-slate-400 text-center text-align-center font-urbanist">
+                Copyright © 2023 | developed by
+                <span className="text-blue-600 font-inter font-medium">
+                  <a href="https://www.linkedin.com/in/piyush-kalyan/">
+                    {" "}
+                    Piyush Kalyan{" "}
+                  </a>
+                </span>
+              </h6>
+            </div>
+          </div>
+        </div>
       </main>
     </>
   );
